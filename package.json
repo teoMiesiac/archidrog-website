@@ -18,7 +18,9 @@
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "start": "npm run dev",
     "test": "npm run type-check && npm run lint",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -58,6 +60,18 @@
     "typescript": "^3.5.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@sambego/storybook-state": "^2.0.1",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-essentials": "^6.0.0",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-storyshots": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^5.3.19",
     "@types/classnames": "^2.2.8",
     "@types/node": "^12.0.10",
     "@types/ramda": "^0.27.6",
@@ -67,6 +81,8 @@
     "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^2.6.0",
     "@typescript-eslint/parser": "^2.6.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^9.1.2",
     "eslint": "^6.6.0",
     "eslint-config-blvd": "^1.0.0",
     "eslint-config-prettier": "^6.5.0",
