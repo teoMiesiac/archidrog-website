@@ -1,8 +1,8 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { BodyWrapper } from './LayoutRoot.styles'
-import { GlobalStyle } from '~styles/global'
-import { theme } from '~styles/theme'
+import { GlobalStyle } from '~/styles/global'
+import { theme } from '~/styles/theme'
 
 const GlobalLayout = ({ children }): JSX.Element => (
   <>

@@ -1,6 +1,6 @@
 import React from 'react'
-import { LayoutRoot } from '~layouts/LayoutRoot'
-import { LayoutMain } from '~layouts/LayoutMain'
+import { LayoutRoot } from '~/layouts/LayoutRoot'
+import { LayoutMain } from '~/layouts/LayoutMain'
 
 const Layout = ({ children }): JSX.Element => (
   <LayoutRoot>

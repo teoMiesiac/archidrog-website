@@ -1,6 +1,6 @@
 import { DefaultTheme, ThemeProps } from 'styled-components'
 import { append, compose, flip, identity, ifElse, concat, path, always } from 'ramda'
-import { renderWhenTrue } from '~utils'
+import { renderWhenTrue } from '~/utils'
 import { Border, Color, Font, Shadow, Size, ZIndex, Transition } from './constants'
 
 type ThemeGetter<P = string, T extends DefaultTheme = DefaultTheme> = (propName: P) => (props: { theme: T }) => string
