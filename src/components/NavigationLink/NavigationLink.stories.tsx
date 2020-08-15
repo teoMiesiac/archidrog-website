@@ -26,7 +26,8 @@ const renderComponent = (props = {}) => {
 }
 
 export default {
-  title: 'Shared|NavigationLink'
+  title: 'Shared|NavigationLink',
+  decorators: [withKnobs]
 }
 
 export const Default = () => renderComponent()
