@@ -9,8 +9,8 @@ export type ThemeMapDef<T extends string | number, V = unknown> = Record<T, V | 
 export const colors: ThemeMapDef<Color, string> = {
   [Color.WHITE]: '#ffffff',
   [Color.BLACK]: '#000000',
-  [Color.PRIMARY]: '#fcb813',
-  [Color.SECONDARY]: '#2249f9',
+  [Color.PRIMARY]: '#575756',
+  [Color.SECONDARY]: '#afc90c',
   [Color.ERROR]: '#fa7265'
 }
 
@@ -51,7 +51,9 @@ export const transitions: ThemeMapDef<Transition, string> = {
   [Transition.DEFAULT]: `0.3s ease-in`
 }
 
-const gridBreakpoints = [breakpoints.tablet, breakpoints.desktop, breakpoints.desktopFull].map(breakpoint => `${breakpoint}px`)
+const gridBreakpoints = [breakpoints.tablet, breakpoints.desktop, breakpoints.desktopFull].map(
+  breakpoint => `${breakpoint}px`
+)
 
 const styledTheme = {
   breakpoints: gridBreakpoints,

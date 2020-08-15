@@ -1,0 +1,9 @@
+node_modules
+build
+dist
+.next
+.next-export
+coverage
+.vscode
+.idea
+next.config.js
