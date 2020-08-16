@@ -31,5 +31,6 @@ export enum ZIndex {
 }
 
 export enum Transition {
-  DEFAULT
+  DEFAULT,
+  LINK
 }
