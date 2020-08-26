@@ -37,7 +37,7 @@ export const Line = styled.span`
 
 const activeStyle = css`
   ${Line} {
-    background-color: ${themeColor(Color.BLACK)};
+    background-color: ${themeColor(Color.SECONDARY)};
 
     &:nth-child(1),
     &:nth-child(4) {

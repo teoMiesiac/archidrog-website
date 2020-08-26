@@ -19,7 +19,7 @@ export const fonts: ThemeMapDef<Font, string> = {
 }
 
 export const borders: ThemeMapDef<Border, string> = {
-  [Border.REGULAR]: `1px solid ${colors[Color.BLACK]}`
+  [Border.REGULAR]: `1px solid ${colors[Color.PRIMARY]}`
 }
 
 export const shadows: ThemeMapDef<Shadow> = {

@@ -8,7 +8,7 @@ import { CustomLink, Content, IconWrapper } from './LinkMobile.styles'
 interface Props {
   mode?: LinkMobileType
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  linkProps: GatsbyLinkProps<any>
+  linkProps?: GatsbyLinkProps<any>
   to: string
   children: string | React.ReactNode
 }
