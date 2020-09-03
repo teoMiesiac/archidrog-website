@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Flex, Box } from 'reflexbox/styled-components'
+import { Flex } from 'reflexbox/styled-components'
 import { Breakpoint, media } from '~/styles/media'
 
 export const HeaderWrapper = styled.header`
