@@ -36,12 +36,17 @@ export const DrawerInnerWrapper = styled.div`
 
 export const DrawerHeader = styled.div`
   height: ${HEADER_HEIGHT};
-  padding: ${HEADER_PADDING};
+  padding: 8px 15px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: center;
   border-bottom: ${themeBorder(Border.REGULAR_BLACK)};
+
+  ${media(Breakpoint.TABLET)`
+    height:69px;
+    padding: 21px 30px;
+  `}
 `
 
 export const AccordionHeader = styled.div`

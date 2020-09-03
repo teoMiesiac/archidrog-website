@@ -1,22 +1,22 @@
 export const Menu = [
   {
-    name: 'O Firmie',
+    name: 'O FIRMIE',
     to: '/about'
   },
   {
-    name: 'Oferta',
+    name: 'OFERTA',
     to: '/offer'
   },
   {
-    name: 'Realizacje',
+    name: 'REALIZACJE',
     to: '/realizations'
   },
   {
-    name: 'Referencje',
+    name: 'REFERENCJE',
     to: '/reference'
   },
   {
-    name: 'Kontakt',
+    name: 'KONTAKT',
     to: '/contact'
   }
 ]
