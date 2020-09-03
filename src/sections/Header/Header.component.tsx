@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Flex, Box } from 'reflexbox/styled-components'
+import { Flex } from 'reflexbox/styled-components'
 import { MobileMenu } from '~/sections/MobileMenu'
 import {
   HeaderWrapper,
