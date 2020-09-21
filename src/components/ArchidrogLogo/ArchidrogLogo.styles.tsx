@@ -9,6 +9,8 @@ interface ImageProps {
   wDesktopFull?: number
 }
 
+export const ImageWrapper = styled.div``
+
 export const Image = styled.img<ImageProps>`
   height: auto;
   width: ${props => props.wMobile}px;
