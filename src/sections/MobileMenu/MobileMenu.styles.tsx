@@ -41,7 +41,7 @@ export const DrawerHeader = styled.div`
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: center;
-  border-bottom: ${themeBorder(Border.REGULAR_BLACK)};
+  border-bottom: ${themeBorder(Border.REGULAR)};
 
   ${media(Breakpoint.TABLET)`
     height:69px;
@@ -53,7 +53,7 @@ export const AccordionHeader = styled.div`
   width: 100%;
   font-size: 1.6rem;
   font-weight: bold;
-  border-bottom: ${themeBorder(Border.REGULAR_BLACK)};
+  border-bottom: ${themeBorder(Border.REGULAR)};
   padding: 19px 10px;
   text-align: left;
 `
