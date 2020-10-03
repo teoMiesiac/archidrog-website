@@ -1,1 +1,1 @@
-export { default as ArrowRightSmall } from './ArrowRightSmall'
+export { default as ArrowRightSmall } from './ArrowRightSmall.component'
