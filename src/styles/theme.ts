@@ -19,12 +19,21 @@ export const fonts: ThemeMapDef<Font, string> = {
 }
 
 export const borders: ThemeMapDef<Border, string> = {
-  [Border.REGULAR]: `1px solid ${colors[Color.PRIMARY]}`
+  [Border.REGULAR]: `1px solid ${colors[Color.PRIMARY]}`,
+  [Border.MEDIUM_PRIMARY]: `2px solid ${colors[Color.PRIMARY]}}`,
+  [Border.MEDIUM_SECONDARY]: `2px solid ${colors[Color.SECONDARY]}`,
+  [Border.MEDIUM_WHITE]: `2px solid ${colors[Color.WHITE]}`
 }
 
 export const shadows: ThemeMapDef<Shadow> = {
   [Shadow.PRIMARY]: css`
     box-shadow: 0 4px 29px 0 rgba(252, 184, 19, 0.45);
+  `,
+  [Shadow.BUTTON]: css`
+    box-shadow: 0 15px 20px -8px rgba(175, 201, 12, 0.25);
+  `,
+  [Shadow.CAROUSEL]: css`
+    box-shadow: 21px 20px 35px 0 rgba(76, 89, 1, 0.27);
   `
 }
 
@@ -49,7 +58,8 @@ export const zIndexes = {
 
 export const transitions: ThemeMapDef<Transition, string> = {
   [Transition.DEFAULT]: `0.3s ease-in`,
-  [Transition.LINK]: `0.3s ease-in`
+  [Transition.LINK]: `0.3s ease-in`,
+  [Transition.BUTTON]: `0.3s ease-in-out`
 }
 
 const gridBreakpoints = [breakpoints.tablet, breakpoints.desktop, breakpoints.desktopFull].map(

@@ -11,11 +11,16 @@ export enum Font {
 }
 
 export enum Border {
-  REGULAR
+  REGULAR,
+  MEDIUM_PRIMARY,
+  MEDIUM_SECONDARY,
+  MEDIUM_WHITE
 }
 
 export enum Shadow {
-  PRIMARY
+  PRIMARY,
+  BUTTON,
+  CAROUSEL
 }
 
 export enum Size {
@@ -32,5 +37,6 @@ export enum ZIndex {
 
 export enum Transition {
   DEFAULT,
-  LINK
+  LINK,
+  BUTTON
 }
