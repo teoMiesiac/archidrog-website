@@ -22,7 +22,7 @@ const renderComponent = () => {
 }
 
 export default {
-  title: 'Sections|MobileMenu',
+  title: 'Sections/MobileMenu',
   decorators: [withKnobs]
 }
 

@@ -45,5 +45,5 @@ export function Default() {
 }
 
 export default {
-  title: 'Shared|Drawer'
+  title: 'Shared/Drawer'
 }

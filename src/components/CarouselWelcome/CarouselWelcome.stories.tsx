@@ -6,7 +6,7 @@ const renderComponent = () => {
 }
 
 export default {
-  title: 'Shared|CarouselWelcome'
+  title: 'Shared/CarouselWelcome'
 }
 
 export const Default = () => renderComponent()

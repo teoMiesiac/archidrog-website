@@ -15,5 +15,5 @@ export function Default() {
 }
 
 export default {
-  title: 'Shared|Hamburger'
+  title: 'Shared/Hamburger'
 }

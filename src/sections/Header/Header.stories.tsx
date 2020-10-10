@@ -6,7 +6,7 @@ const renderComponent = () => {
 }
 
 export default {
-  title: 'Sections|Header'
+  title: 'Sections/Header'
 }
 
 export const Default = () => renderComponent()

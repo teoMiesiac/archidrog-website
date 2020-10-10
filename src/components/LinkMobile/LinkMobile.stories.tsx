@@ -25,7 +25,7 @@ const renderComponent = (props = {}) => {
 }
 
 export default {
-  title: 'Shared|LinkMobile',
+  title: 'Shared/LinkMobile',
   decorators: [withKnobs]
 }
 

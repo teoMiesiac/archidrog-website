@@ -8,7 +8,7 @@ const renderComponent = (props = {}) => {
 }
 
 export default {
-  title: 'Shared|ContactFooter'
+  title: 'Shared/ContactFooter'
 }
 
 export const Default = () => renderComponent()

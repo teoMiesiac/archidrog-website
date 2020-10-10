@@ -27,7 +27,7 @@ const renderComponent = (props = {}) => {
 }
 
 export default {
-  title: 'Shared|ArchidrogLogo',
+  title: 'Shared/ArchidrogLogo',
   decorators: [withKnobs]
 }
 

@@ -6,7 +6,7 @@ const renderComponent = () => {
 }
 
 export default {
-  title: 'Sections|Footer'
+  title: 'Sections/Footer'
 }
 
 export const Default = () => renderComponent()
