@@ -1,2 +1,2 @@
-export { default as ButtonArrow } from './ButtonTextArrowLink.component'
+export { default as ButtonTextArrowLink } from './ButtonTextArrowLink.component'
 export * from './ButtonTextArrowLink.constants'
