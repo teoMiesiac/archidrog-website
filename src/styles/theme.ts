@@ -11,7 +11,8 @@ export const colors: ThemeMapDef<Color, string> = {
   [Color.BLACK]: '#000000',
   [Color.PRIMARY]: '#575756',
   [Color.SECONDARY]: '#afc90c',
-  [Color.ERROR]: '#fa7265'
+  [Color.ERROR]: '#fa7265',
+  [Color.GREY]: '#f9f9f9'
 }
 
 export const fonts: ThemeMapDef<Font, string> = {

@@ -3,7 +3,8 @@ export enum Color {
   BLACK,
   PRIMARY,
   SECONDARY,
-  ERROR
+  ERROR,
+  GREY
 }
 
 export enum Font {
