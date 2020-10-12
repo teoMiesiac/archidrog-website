@@ -1,6 +1,6 @@
 import React from 'react'
-import { SectionWrapper, SectionTitle } from './Section.styles'
-
+import { SectionTitle } from '~/components/SectionTitle'
+import { SectionWrapper } from './Section.styles'
 interface Props {
   title?: string
   children: React.ReactNode
@@ -8,7 +8,7 @@ interface Props {
 
 const Section = ({ title, children }: Props): JSX.Element => (
   <SectionWrapper>
-    <SectionTitle>{title}</SectionTitle>
+    {title && <SectionTitle>{title}</SectionTitle>}
     {children}
   </SectionWrapper>
 )
