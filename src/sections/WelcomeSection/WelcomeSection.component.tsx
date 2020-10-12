@@ -7,7 +7,15 @@ import { Color } from '~/styles/constants'
 
 const WelcomeSection = (): JSX.Element => (
   <Section>
-    <Flex flexDirection={['column', 'row']} flexWrap="nowrap" px={[15, 30]} py={[20, 30, 50]} maxWidth={1480}>
+    <Flex
+      flexDirection={['column', 'row']}
+      flexWrap="nowrap"
+      px={[15, 30]}
+      py={[20, 30, 50]}
+      maxWidth={1480}
+      width="100%"
+      justifyContent={['', 'space-between']}
+    >
       <Flex flexDirection="column" width={['100%', '50%']} paddingRight={['0', '0', '20px']} justifyContent="center">
         <Title fontSize={['3rem', '3.5rem', '4.2rem']}>Świadczymy usługi w branży drogowej i mostowej</Title>
         <Box

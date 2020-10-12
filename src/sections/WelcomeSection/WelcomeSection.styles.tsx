@@ -3,7 +3,12 @@ import { fontSize, FontSizeProps } from 'styled-system'
 import { Color } from '~/styles/constants'
 import { themeColor } from '~/styles/getters'
 
-export const Section = styled.section``
+export const Section = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 export const Title = styled.h1<FontSizeProps>`
   color: ${themeColor(Color.PRIMARY)};
