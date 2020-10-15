@@ -12,7 +12,8 @@ export const colors: ThemeMapDef<Color, string> = {
   [Color.PRIMARY]: '#575756',
   [Color.SECONDARY]: '#afc90c',
   [Color.ERROR]: '#fa7265',
-  [Color.GREY]: '#f9f9f9'
+  [Color.GREY]: '#f9f9f9',
+  [Color.GREY_400]: '#e2e2e2'
 }
 
 export const fonts: ThemeMapDef<Font, string> = {
@@ -35,6 +36,9 @@ export const shadows: ThemeMapDef<Shadow> = {
   `,
   [Shadow.CAROUSEL]: css`
     box-shadow: 21px 20px 35px 0 rgba(76, 89, 1, 0.27);
+  `,
+  [Shadow.OFFER]: css`
+    box-shadow: 0 15px 20px -8px rgba(0, 0, 0, 0.09);
   `
 }
 

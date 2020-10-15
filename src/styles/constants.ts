@@ -4,7 +4,8 @@ export enum Color {
   PRIMARY,
   SECONDARY,
   ERROR,
-  GREY
+  GREY,
+  GREY_400
 }
 
 export enum Font {
@@ -21,7 +22,8 @@ export enum Border {
 export enum Shadow {
   PRIMARY,
   BUTTON,
-  CAROUSEL
+  CAROUSEL,
+  OFFER
 }
 
 export enum Size {
