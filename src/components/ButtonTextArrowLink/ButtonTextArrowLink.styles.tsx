@@ -10,8 +10,11 @@ const PrimaryArrowButtonStyle = css`
   border: ${themeBorder(Border.MEDIUM_WHITE)};
   color: ${themeColor(Color.WHITE)};
   &:hover {
-    border: ${themeBorder(Border.MEDIUM_SECONDARY)};
     color: ${themeColor(Color.SECONDARY)};
+    &::after {
+      background: ${themeColor(Color.WHITE)};
+      width: 100%;
+    }
   }
 `
 
@@ -19,22 +22,37 @@ const SecondaryArrowButtonStyle = css`
   border: ${themeBorder(Border.MEDIUM_SECONDARY)};
   color: ${themeColor(Color.SECONDARY)};
   &:hover {
-    border: ${themeBorder(Border.MEDIUM_WHITE)};
     color: ${themeColor(Color.WHITE)};
+    &::after {
+      background: ${themeColor(Color.SECONDARY)};
+      width: 100%;
+    }
   }
 `
 
 export const CustomLink = styled(Link)`
+  position: relative;
   padding: 12px 30px;
   font-weight: bold;
   display: inline-block;
   transition: all ${themeTransition(Transition.BUTTON)};
+  z-index: 1;
   ${theme('mode', {
     [ButtonArrowType.PRIMARY]: PrimaryArrowButtonStyle,
     [ButtonArrowType.SECONDARY]: SecondaryArrowButtonStyle
   })};
   &:hover {
     ${themeShadow(Shadow.BUTTON)}
+  }
+  &::after {
+    transition: all ${themeTransition(Transition.BUTTON)};
+    height: 100%;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    z-index: -1;
   }
 `
 
