@@ -23,7 +23,8 @@ const Offer = ({ title, link, subOffers }: OfferInterface): JSX.Element => (
           {title}
         </TitleMobile>
         <Title
-          flexFLow="row nowrap"
+          flexDirection="row"
+          flexWrap="nowrap"
           width="100%"
           alignItems="center"
           justifyContent="space-between"

@@ -3,7 +3,16 @@ import { Link } from 'gatsby'
 import { Flex } from 'reflexbox'
 import { Color, Transition, Shadow } from '~/styles/constants'
 import { themeColor, themeTransition, themeShadow } from '~/styles/getters'
-import { display, minHeight, flexFlow, width, alignItems, justifyContent, DisplayProps } from 'styled-system'
+import {
+  display,
+  minHeight,
+  flexDirection,
+  flexWrap,
+  width,
+  alignItems,
+  justifyContent,
+  DisplayProps
+} from 'styled-system'
 
 export const ButtonWrapper = styled.div`
   transition: all ${themeTransition(Transition.BUTTON)};
@@ -41,7 +50,8 @@ export const TitleMobile = styled(Link)<DisplayProps>`
 
 export const Title = styled.div<DisplayProps>`
   ${minHeight};
-  ${flexFlow};
+  ${flexDirection};
+  ${flexWrap};
   ${width};
   ${alignItems};
   ${justifyContent};
