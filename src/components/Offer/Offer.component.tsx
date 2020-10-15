@@ -28,7 +28,7 @@ const Offer = ({ title, link, subOffers }: OfferInterface): JSX.Element => (
           alignItems="center"
           justifyContent="space-between"
           display={['none', 'none', 'flex']}
-          minHeight={[0, 0, 67]}
+          minHeight={[0, 0, 48]}
         >
           <span>{title}</span>
           {link && (
