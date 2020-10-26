@@ -1,6 +1,9 @@
 import styled from 'styled-components'
+import { margin, marginTop, MarginProps } from 'styled-system'
 
-export const Paragraph = styled.p`
+export const Paragraph = styled.p<MarginProps>`
+  ${margin}
+  ${marginTop}
   width: 100%;
   font-size: 1.5rem;
   font-weight: 300;
