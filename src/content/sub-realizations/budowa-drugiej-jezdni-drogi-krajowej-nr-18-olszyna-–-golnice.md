@@ -2,9 +2,9 @@
 type: sub-realization
 title: Budowa drugiej jezdni drogi krajowej nr 18 Olszyna – Golnice
 images:
-  - /assets/wnioski1_1.jpg
-  - /assets/wnioski1_1.jpg
-  - /assets/wnioski1_1.jpg
+  - images/wnioski1_1.jpg
+  - images/wnioski1_1.jpg
+  - images/wnioski1_1.jpg
 bullet-points:
   - |
     Droga stanowi I etap budowy autostrady A18.

@@ -4,8 +4,8 @@ backend:
   branch: development
   use_graphql: true
 
-media_folder: src/assets/images
-public_folder: /assets
+media_folder: 'src/assets/images'
+public_folder: 'images'
 
 collections:
   - label: 'Realizations'

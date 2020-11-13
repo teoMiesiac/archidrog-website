@@ -3,9 +3,9 @@ type: sub-realization
 title: Budowa trasy średnicowej etap II – od ul. Droga Łąkowa do węzła A-1
   „Grudziądz” – odcinek 3
 images:
-  - /assets/wnioski1_1.jpg
-  - /assets/wnioski1_1.jpg
-  - /assets/wnioski1_1.jpg
+  - images/wnioski1_1.jpg
+  - images/wnioski1_1.jpg
+  - images/wnioski1_1.jpg
 bullet-points:
   - |
     Długość wybudowanej drogi obwodowej: 2,727 km
