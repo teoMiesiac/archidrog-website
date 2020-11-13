@@ -1,4 +1,5 @@
 ---
+type: sub-realization
 title: Budowa drugiej jezdni drogi krajowej nr 18 Olszyna – Golnice
 images:
   - /assets/wnioski1_1.jpg

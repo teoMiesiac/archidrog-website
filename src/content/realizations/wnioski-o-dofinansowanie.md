@@ -1,4 +1,5 @@
 ---
+type: realization
 title: Wnioski o dofinansowanie
 sub-realizations:
   - Budowa trasy średnicowej etap II – od ul. Droga Łąkowa do węzła A-1

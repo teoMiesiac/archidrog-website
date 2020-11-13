@@ -1,4 +1,5 @@
 ---
+type: sub-realization
 title: Budowa trasy średnicowej etap II – od ul. Droga Łąkowa do węzła A-1
   „Grudziądz” – odcinek 3
 images:

@@ -1,4 +1,5 @@
 ---
+type: sub-realization
 title: Połączenie portu lotniczego z portem morskim Gdańsk - trasa Słowackiego
 images:
   - /assets/wnioski1_1.jpg

@@ -1,4 +1,5 @@
 ---
+type: realization
 title: Studia wykonalności
 sub-realizations:
   - Połączenie portu lotniczego z portem morskim Gdańsk - trasa Słowackiego
