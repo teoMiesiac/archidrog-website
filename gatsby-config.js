@@ -15,6 +15,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-netlify-cms-paths`,
+      options: {
+        cmsConfig: `/static/admin/config.yml`
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'assets',

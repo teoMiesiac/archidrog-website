@@ -4,10 +4,32 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 export const query = graphql`
   query {
-    file1: file(relativePath: { eq: "images/foto1.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 800, maxHeight: 600) {
-          ...GatsbyImageSharpFluid
+    subRealizations: allMarkdownRemark(filter: { frontmatter: { type: { eq: "sub-realization" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            sub_realizations
+            images {
+              id
+              childImageSharp {
+                fluid(maxWidth: 800, maxHeight: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            bullet_points
+          }
+        }
+      }
+    }
+    realizations: allMarkdownRemark(filter: { frontmatter: { type: { eq: "realization" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            sub_realizations
+          }
         }
       }
     }
