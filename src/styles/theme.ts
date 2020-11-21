@@ -13,7 +13,8 @@ export const colors: ThemeMapDef<Color, string> = {
   [Color.SECONDARY]: '#afc90c',
   [Color.ERROR]: '#fa7265',
   [Color.GREY]: '#f9f9f9',
-  [Color.GREY_400]: '#e2e2e2'
+  [Color.GREY_400]: '#e2e2e2',
+  [Color.GREY_500]: '#404040'
 }
 
 export const fonts: ThemeMapDef<Font, string> = {

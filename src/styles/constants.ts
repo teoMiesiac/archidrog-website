@@ -5,7 +5,8 @@ export enum Color {
   SECONDARY,
   ERROR,
   GREY,
-  GREY_400
+  GREY_400,
+  GREY_500
 }
 
 export enum Font {
