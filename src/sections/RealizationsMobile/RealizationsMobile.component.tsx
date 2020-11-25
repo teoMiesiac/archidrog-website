@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { Section } from '~/components/Section'
-import { SectionTitle } from '~/components/SectionTitle'
 import { Realization as IRealization } from '~/models'
 import { ExpansionPanel } from '~/components/ExpansionPanel'
 import { CarouselRealizationMobile } from '~/components/CarouselRealizationMobile'
+import { Wrapper } from './RealizationsMobile.styles'
 interface Props {
   realizations: IRealization[]
 }
@@ -16,8 +15,7 @@ const RealizationsMobile = ({ realizations }: Props): JSX.Element => {
   }
 
   return (
-    <Section>
-      <SectionTitle>Realizacje</SectionTitle>
+    <Wrapper>
       {realizations.map((realization, index) => (
         <ExpansionPanel
           key={index}
@@ -28,7 +26,7 @@ const RealizationsMobile = ({ realizations }: Props): JSX.Element => {
           <CarouselRealizationMobile subRealizations={realization.subRealizations} />
         </ExpansionPanel>
       ))}
-    </Section>
+    </Wrapper>
   )
 }
 
