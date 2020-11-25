@@ -70,7 +70,7 @@ export const CarouselWrapper = styled.div`
     justify-content: center;
     margin: auto;
     padding: 0;
-    margin: 0;
+    margin: 10px 0;
     list-style: none;
     text-align: center;
   }

@@ -1,12 +1,30 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Flex } from 'reflexbox/styled-components'
-import { Color } from '~/styles/constants'
-import { themeColor } from '~/styles/getters'
-import { Breakpoint, getBreakpointMediaQuery } from '~/styles/media'
+import { Color, Shadow } from '~/styles/constants'
+import { styleWhenTrue, themeColor, themeShadow } from '~/styles/getters'
+import { ExpansionPanelTheme } from './ExpansionPanel.component'
+interface ContentProps {
+  animate: boolean
+}
+
+const expandedWrapperStyle = css`
+  margin-bottom: 20px;
+  ${themeShadow(Shadow.OFFER)};
+  transition: margin-bottom 0.6s ease;
+`
 
 export const Wrapper = styled.div`
   width: 100%;
-  border-bottom: 1px solid ${themeColor(Color.GREY_400)};
+  margin-bottom: 0;
+  transition: margin-bottom 0.6s ease;
+  ${styleWhenTrue<ExpansionPanelTheme>(({ expanded }) => expanded, expandedWrapperStyle)};
+  &:not(:first-of-type) {
+    border-top: 1px solid ${themeColor(Color.GREY_400)};
+  }
+`
+
+const expandedHeaderStyle = css`
+  padding: 15px 10px;
 `
 
 export const Header = styled.button`
@@ -16,17 +34,19 @@ export const Header = styled.button`
   font-size: 1.4rem;
   letter-spacing: 0.53px;
   color: ${themeColor(Color.PRIMARY)};
-  padding: 10px;
+  transition: padding 0.6s ease;
+  ${styleWhenTrue<ExpansionPanelTheme>(({ expanded }) => expanded, expandedHeaderStyle)};
 `
 
-interface ContentProps {
-  animate: boolean
-}
+const expandedContentStyle = css`
+  // its shortcut, it should be calculated height passed using props e.g: scrollheight of html element
+  max-height: 1000px;
+  transition: max-height 0.6s ease;
+`
 
 export const Content = styled(Flex)<ContentProps>`
-  max-height: ${props => (props.animate ? '1000px' : 0)};
+  max-height: 0;
+  transition: max-height 0.6s ease;
   overflow: hidden;
-  @media ${getBreakpointMediaQuery(Breakpoint.DESKTOP)} {
-    width: ${props => props.wDesktop}px;
-  }
+  ${styleWhenTrue<ExpansionPanelTheme>(({ expanded }) => expanded, expandedContentStyle)};
 `

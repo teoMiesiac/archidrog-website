@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Realizations from './RealizationsMobile.component'
 import { mapRealizationAndSubRealizationData } from '~/utils'
 
-export const query = graphql`
+const query = graphql`
   query {
     subRealizations: allMarkdownRemark(filter: { frontmatter: { type: { eq: "sub-realization" } } }) {
       edges {
@@ -47,7 +47,7 @@ const RenderComponent = (props = {}) => {
 }
 
 export default {
-  title: 'Sections/Realizations'
+  title: 'Sections/RealizationsMobile'
 }
 
 export const Default = () => RenderComponent()

@@ -25,7 +25,9 @@ export const DesktopImage = styled(Img)<LayoutProps>`
 
 export const Content = styled(Flex)`
   ${padding};
-  background-color: ${themeColor(Color.GREY)};
+  @media ${getBreakpointMediaQuery(Breakpoint.DESKTOP)} {
+    background-color: ${themeColor(Color.ERROR)};
+  }
 `
 
 export const Title = styled.p<FontProps>`
