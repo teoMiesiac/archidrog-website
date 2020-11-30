@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { width, padding, top, margin, LayoutProps, fontSize, FontProps } from 'styled-system'
+import { width, left, padding, top, margin, LayoutProps, fontSize, FontProps } from 'styled-system'
 import { Flex } from 'reflexbox/styled-components'
 import { Color, Transition } from '~/styles/constants'
 import { themeColor, themeTransition } from '~/styles/getters'
@@ -9,6 +9,7 @@ import { Breakpoint, getBreakpointMediaQuery } from '~/styles/media'
 export const ImageContainer = styled(Flex)<LayoutProps>`
   position: relative;
   ${top};
+  z-index: 2;
 `
 
 export const MainImage = styled(Img)<LayoutProps>`
@@ -24,9 +25,21 @@ export const DesktopImage = styled(Img)<LayoutProps>`
 `
 
 export const Content = styled(Flex)`
+  position: relative;
+  ${left};
   ${padding};
   @media ${getBreakpointMediaQuery(Breakpoint.DESKTOP)} {
-    background-color: ${themeColor(Color.ERROR)};
+    background-color: ${themeColor(Color.GREY)};
+
+    &::before {
+      top: 0px;
+      left: -80px;
+      position: absolute;
+      content: '';
+      width: 80px;
+      height: 100%;
+      background-color: ${themeColor(Color.GREY)};
+    }
   }
 `
 

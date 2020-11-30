@@ -7,7 +7,7 @@ const query = graphql`
   query {
     file1: file(relativePath: { eq: "images/foto1.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 800, maxHeight: 600) {
+        fluid(maxWidth: 800) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -21,7 +21,7 @@ const Container = styled.div`
 const RenderComponent = (props = {}): JSX.Element => {
   const data = useStaticQuery(query)
   const defaultProps = {
-    images: [data.file1.childImageSharp.fluid, data.file1.childImageSharp.fluid, data.file1.childImageSharp.fluid],
+    images: [data.file1, data.file1, data.file1],
     title: 'Budowa trasy średnicowej etap II – od ul. Droga Łąkowa do węzła A-1 „Grudziądz” – odcinek 3',
     bulletPoints: [
       'Długość wybudowanej drogi obwodowej: 2,727 km',
