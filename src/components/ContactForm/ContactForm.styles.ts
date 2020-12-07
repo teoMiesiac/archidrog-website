@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import { space, SpaceProps } from 'styled-system'
 import { Color, Transition } from '~/styles/constants'
 import { themeColor, themeTransition } from '~/styles/getters'
+import { Breakpoint, getBreakpointMediaQuery } from '~/styles/media'
 
 export const Form = styled.form`
   display: flex;
@@ -50,9 +51,10 @@ export const TextArea = styled.textarea`
 `
 
 export const ButtonWrapper = styled.div<SpaceProps>`
-  width: 300px;
   ${space};
-
+  @media ${getBreakpointMediaQuery(Breakpoint.TABLET)} {
+    width: 300px;
+  }
   button {
     width: 100%;
     height: 56px;
