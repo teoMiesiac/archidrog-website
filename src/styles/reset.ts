@@ -79,6 +79,7 @@ export const ResetCss = css`
   section,
   summary,
   time,
+  textarea,
   mark,
   audio,
   video {
@@ -123,5 +124,11 @@ export const ResetCss = css`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+  textarea {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
   }
 `
