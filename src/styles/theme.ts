@@ -40,6 +40,9 @@ export const shadows: ThemeMapDef<Shadow> = {
   `,
   [Shadow.OFFER]: css`
     box-shadow: 0 15px 20px -8px rgba(0, 0, 0, 0.09);
+  `,
+  [Shadow.MAP]: css`
+    box-shadow: 0 24px 20px -10px rgba(0, 0, 0, 0.12);
   `
 }
 

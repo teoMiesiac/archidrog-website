@@ -24,7 +24,8 @@ export enum Shadow {
   PRIMARY,
   BUTTON,
   CAROUSEL,
-  OFFER
+  OFFER,
+  MAP
 }
 
 export enum Size {
