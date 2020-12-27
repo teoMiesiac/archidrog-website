@@ -5,33 +5,48 @@ import { Border, Color, Transition, Shadow } from '~/styles/constants'
 import { themeBorder, themeColor, themeTransition, themeShadow } from '~/styles/getters'
 import { ButtonPreviewType } from './ButtonPreview.constants'
 import { Breakpoint, getBreakpointMediaQuery } from '~/styles/media'
+import { TR } from '~/components/ReferenceTable/ReferenceTable.styles'
 
 const PrimaryArrowButtonStyle = css`
   @media ${getBreakpointMediaQuery(Breakpoint.TABLET)} {
-    border: ${themeBorder(Border.MEDIUM_SECONDARY)};
     &:hover {
-      color: ${themeColor(Color.SECONDARY)};
+      color: ${themeColor(Color.SECONDARY)} !important;
       &::after {
         background: ${themeColor(Color.WHITE)};
         width: 100%;
       }
     }
   }
-  color: ${themeColor(Color.WHITE)};
 `
 
 const SecondaryArrowButtonStyle = css`
   @media ${getBreakpointMediaQuery(Breakpoint.TABLET)} {
-    border: ${themeBorder(Border.MEDIUM_SECONDARY)};
     &:hover {
-      color: ${themeColor(Color.WHITE)};
+      color: ${themeColor(Color.WHITE)} !important;
       &::after {
         background: ${themeColor(Color.SECONDARY)};
         width: 100%;
       }
     }
   }
+`
+
+const PrimaryButtonTRHoverStyle = css`
+  border: ${themeBorder(Border.MEDIUM_PRIMARY)};
+  .icon .path {
+    fill: ${themeColor(Color.PRIMARY)};
+  }
+  color: ${themeColor(Color.WHITE)};
+`
+
+const SecondaryButtonTRHoverStyle = css`
   color: ${themeColor(Color.SECONDARY)};
+  .icon .path {
+    fill: ${themeColor(Color.SECONDARY)};
+  }
+  @media ${getBreakpointMediaQuery(Breakpoint.TABLET)} {
+    border: ${themeBorder(Border.MEDIUM_SECONDARY)};
+  }
 `
 
 export const CustomButton = styled.a`
@@ -39,8 +54,11 @@ export const CustomButton = styled.a`
   padding: 9px 20px;
   font-weight: bold;
   display: inline-block;
-  transition: all ${themeTransition(Transition.BUTTON)};
+  transition: fill ${themeTransition(Transition.BUTTON)}, color ${themeTransition(Transition.BUTTON)},
+    background-color ${themeTransition(Transition.BUTTON)}, width ${themeTransition(Transition.BUTTON)};
   z-index: 1;
+  border: 2px solid transparent;
+
   ${theme('mode', {
     [ButtonPreviewType.PRIMARY]: PrimaryArrowButtonStyle,
     [ButtonPreviewType.SECONDARY]: SecondaryArrowButtonStyle
@@ -51,7 +69,9 @@ export const CustomButton = styled.a`
     }
   }
   &::after {
-    transition: all ${themeTransition(Transition.BUTTON)};
+    transition: fill ${themeTransition(Transition.BUTTON)}, color ${themeTransition(Transition.BUTTON)},
+      background-color ${themeTransition(Transition.BUTTON)}, width ${themeTransition(Transition.BUTTON)};
+
     height: 100%;
     content: '';
     position: absolute;
@@ -60,14 +80,22 @@ export const CustomButton = styled.a`
     width: 0;
     z-index: -1;
   }
+
+  .icon .path {
+    transition: fill ${themeTransition(Transition.BUTTON)}, color ${themeTransition(Transition.BUTTON)},
+      background-color ${themeTransition(Transition.BUTTON)}, width ${themeTransition(Transition.BUTTON)};
+    fill: ${themeColor(Color.PRIMARY)};
+  }
+
+  ${TR}:hover & {
+    ${theme('mode', {
+      [ButtonPreviewType.PRIMARY]: PrimaryButtonTRHoverStyle,
+      [ButtonPreviewType.SECONDARY]: SecondaryButtonTRHoverStyle
+    })};
+  }
 `
 
 export const IconPrimaryStyle = css`
-  .icon .path {
-    transition: all ${themeTransition(Transition.BUTTON)};
-    fill: ${themeColor(Color.WHITE)};
-  }
-
   @media ${getBreakpointMediaQuery(Breakpoint.TABLET)} {
     ${CustomButton}:hover & {
       .icon .path {
@@ -78,10 +106,6 @@ export const IconPrimaryStyle = css`
 `
 
 export const IconSecondaryStyle = css`
-  .icon .path {
-    transition: all ${themeTransition(Transition.BUTTON)};
-    fill: ${themeColor(Color.SECONDARY)};
-  }
   @media ${getBreakpointMediaQuery(Breakpoint.TABLET)} {
     ${CustomButton}:hover & {
       .icon .path {

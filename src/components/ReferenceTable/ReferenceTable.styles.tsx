@@ -31,11 +31,22 @@ export const THead = styled.thead`
   line-height: normal;
   letter-spacing: 1.42px;
 `
-
+export const TD = styled.td`
+  padding: 9px 5px;
+  vertical-align: middle;
+  height: 36px;
+  &:nth-of-type(4) {
+    width: 1%;
+  }
+  &:nth-of-type(5) {
+    width: 1%;
+  }
+`
 export const TR = styled.tr`
   height: 24px;
   border-bottom: 1px solid ${themeColor(Color.GREY_400)};
   transition: all ${themeTransition(Transition.BUTTON)};
+
   &:hover {
     ${themeShadow(Shadow.OFFER)};
   }
@@ -53,18 +64,6 @@ export const TH = styled.th`
   }
 `
 
-export const TD = styled.td`
-  padding: 9px 5px;
-  vertical-align: middle;
-  height: 36px;
-  &:nth-of-type(4) {
-    width: 1%;
-  }
-  &:nth-of-type(5) {
-    width: 1%;
-  }
-`
-
 export const Text = styled.p`
   width: 100%;
   text-align: left;
@@ -79,6 +78,4 @@ export const Text = styled.p`
 export const Bold = styled.span`
   font-weight: bold;
 `
-export const ButtonWrapper = styled.div`
-  color: red;
-`
+export const ButtonWrapper = styled.div``
