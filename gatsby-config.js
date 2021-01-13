@@ -1,4 +1,5 @@
 'use strict'
+const path = require('path')
 
 module.exports = {
   siteMetadata: {
@@ -13,6 +14,19 @@ module.exports = {
     }
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-netlify-cms-paths`,
+      options: {
+        cmsConfig: `/static/admin/config.yml`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'assets',
+        path: `${__dirname}/src/assets`
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -55,6 +69,14 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-netlify-cms',
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        '~': path.join(__dirname, 'src')
+      }
+    }
   ]
 }

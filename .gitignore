@@ -2,6 +2,12 @@
 # Node.js-Specific Ignores
 # =========================
 
+#webstorm
+.idea/
+
+#vs code
+.vscode/
+
 # Build directory
 public/
 

@@ -1,0 +1,68 @@
+backend:
+  name: github
+  repo: teoMiesiac/archidrog-website
+  branch: development
+  use_graphql: true
+
+media_folder: 'src/assets/images'
+public_folder: 'images'
+
+collections:
+  - label: 'Realizations'
+    name: 'realization'
+    folder: 'src/content/realizations'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Type', name: 'type', widget: 'hidden', default: 'realization' }
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - {
+          label: 'SubRealizations',
+          name: 'sub-realizations',
+          widget: 'list',
+          summary: '{{fields.sub-realization}}',
+          field:
+            {
+              label: 'SubRealization',
+              name: 'sub-realization',
+              widget: 'relation',
+              collection: 'sub-realization',
+              search_fields: ['title'],
+              value_field: 'title',
+              display_fields: ['title'],
+            },
+        }
+  - label: 'Sub-Realizations'
+    name: 'sub-realization'
+    folder: 'src/content/sub-realizations'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Type', name: 'type', widget: 'hidden', default: 'sub-realization' }
+      - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'Images', name: 'images', widget: 'list', field: { label: 'Image', name: 'image', widget: 'image' } }
+      - {
+          label: 'Bullet Points',
+          name: 'bullet-points',
+          widget: 'list',
+          summary: '{{fields.name}}',
+          field: { label: 'Bullet', name: 'bullet-point', widget: 'text' },
+        }
+  - label: 'References'
+    name: 'references'
+    folder: 'src/content/references'
+    create: true
+    slug: '{{investor}}'
+    fields:
+      - { label: 'Type', name: 'type', widget: 'hidden', default: 'references' }
+      - { label: 'Investor', name: 'investor', widget: 'string' }
+      - { label: 'Scope of work', name: 'scope_of_work', widget: 'string' }
+      - { label: 'File', name: 'file', widget: 'file' }
+      - {
+          label: 'Scopes of work',
+          name: 'scopes_of_work',
+          widget: 'list',
+          summary: '{{fields.name}}',
+          fields:
+            [{ label: 'Work', name: 'scope_of_work', widget: 'text' }, { label: 'File', name: 'file', widget: 'file' }],
+        }
