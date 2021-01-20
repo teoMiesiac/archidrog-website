@@ -25,7 +25,8 @@ export enum Shadow {
   BUTTON,
   CAROUSEL,
   OFFER,
-  MAP
+  MAP,
+  HEADER_MOBILE
 }
 
 export enum Size {

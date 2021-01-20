@@ -43,6 +43,9 @@ export const shadows: ThemeMapDef<Shadow> = {
   `,
   [Shadow.MAP]: css`
     box-shadow: 0 24px 20px -10px rgba(0, 0, 0, 0.12);
+  `,
+  [Shadow.HEADER_MOBILE]: css`
+    box-shadow: 0 15px 20px -12px rgba(0, 0, 0, 0.09);
   `
 }
 

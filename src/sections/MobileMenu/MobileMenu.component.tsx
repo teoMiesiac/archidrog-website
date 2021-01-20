@@ -21,6 +21,7 @@ const MobileMenu = ({ mode = MobileMenuType.PRIMARY, active, onClose, items }: P
         <Drawer isOpen={active}>
           <DrawerInnerWrapper>
             <DrawerHeader>
+              {/*<ArchidrogLogo wMobile={110} mode={ArchidrogLogoType.SECONDARY} /> */}
               <Hamburger onClick={onClose} active={active} />
             </DrawerHeader>
             {items.map(item => (

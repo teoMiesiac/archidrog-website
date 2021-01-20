@@ -1,5 +1,5 @@
 import React from 'react'
-import { Wrapper } from './Drawer.styles'
+import { Wrapper, Backdrop } from './Drawer.styles'
 
 interface Props {
   isOpen: boolean
@@ -15,7 +15,13 @@ function Drawer({ children, isOpen }: Props): JSX.Element {
     }
   }, [animate, isOpen])
 
-  return <Wrapper className={`${isOpen ? 'active' : ''} ${animate ? 'animate' : ''}`}>{children}</Wrapper>
+  return (
+    <>
+      <Backdrop className={`${isOpen ? 'active' : ''}`} />
+
+      <Wrapper className={`${isOpen ? 'active' : ''} ${animate ? 'animate' : ''}`}>{children}</Wrapper>
+    </>
+  )
 }
 
 export default Drawer

@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 import theme from 'styled-theming'
-import { Breakpoint, media } from '~/styles/media'
-import { Border, Color } from '~/styles/constants'
-import { themeBorder, themeColor } from '~/styles/getters'
+import { Breakpoint, getBreakpointMediaQuery, media } from '~/styles/media'
+import { Border, Color, Shadow } from '~/styles/constants'
+import { themeBorder, themeColor, themeShadow } from '~/styles/getters'
 import { MobileMenuType } from './MobileMenu.constants'
 
 const HEADER_HEIGHT = '45px'
@@ -36,17 +36,18 @@ export const DrawerInnerWrapper = styled.div`
 
 export const DrawerHeader = styled.div`
   height: ${HEADER_HEIGHT};
-  padding: 8px 15px;
+  padding: 8px 28px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: center;
   border-bottom: ${themeBorder(Border.REGULAR)};
+  ${themeShadow(Shadow.HEADER_MOBILE)};
 
-  ${media(Breakpoint.TABLET)`
-    height:69px;
+  @media ${getBreakpointMediaQuery(Breakpoint.TABLET)} {
+    height: 69px;
     padding: 21px 30px;
-  `}
+  }
 `
 
 export const AccordionHeader = styled.div`
