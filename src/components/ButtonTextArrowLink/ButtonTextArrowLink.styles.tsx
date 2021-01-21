@@ -32,8 +32,8 @@ const SecondaryArrowButtonStyle = css`
 
 export const CustomLink = styled(Link)`
   position: relative;
-  padding: 12px 30px;
-  font-weight: bold;
+  padding: 18px 30px;
+  font-weight: 500;
   display: inline-block;
   transition: all ${themeTransition(Transition.BUTTON)};
   z-index: 1;
