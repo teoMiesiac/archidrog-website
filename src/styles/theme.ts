@@ -18,7 +18,7 @@ export const colors: ThemeMapDef<Color, string> = {
 }
 
 export const fonts: ThemeMapDef<Font, string> = {
-  [Font.PRIMARY]: 'Inter'
+  [Font.PRIMARY]: 'Roboto'
 }
 
 export const borders: ThemeMapDef<Border, string> = {
