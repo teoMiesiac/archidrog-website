@@ -40,7 +40,7 @@ const WhoWeAreSection = (): JSX.Element => (
           </Box>
         </Box>
         <Box margin={['20px 0', '35px 0 0 0']}>
-          <ButtonTextArrowLink to="" text="Sprawdź więcej" mode={ButtonArrowType.SECONDARY} />
+          <ButtonTextArrowLink to="" text="Sprawdź więcej" mode={ButtonArrowType.SECONDARY} fontSize={['1.6rem']} />
         </Box>
       </SubSection>
       <SubSection
@@ -66,7 +66,7 @@ const WhoWeAreSection = (): JSX.Element => (
           </Box>
         </Box>
         <Box margin={['20px 0', '35px 0 0 0']}>
-          <ButtonTextArrowLink to="" text="Sprawdź więcej" mode={ButtonArrowType.SECONDARY} />
+          <ButtonTextArrowLink to="" text="Sprawdź więcej" mode={ButtonArrowType.SECONDARY} fontSize={['1.6rem']} />
         </Box>
       </SubSection>
     </Flex>
