@@ -28,6 +28,19 @@ export const Wrapper = styled.div`
   &:not(:last-of-type) {
     margin-right: 55px;
   }
+
+  .active {
+    :after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      left: 0px;
+      width: 100%;
+      height: 2px;
+      background: ${themeColor(Color.SECONDARY)};
+    }
+  }
 `
 
 export const StyledLink = styled(Link)`
@@ -41,4 +54,7 @@ export const StyledLink = styled(Link)`
   ${theme('mode', {
     [NavigationLinkType.PRIMARY]: primaryLinkStyle
   })}
+  .active-style {
+    color: red;
+  }
 `
