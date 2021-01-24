@@ -6,7 +6,7 @@ import { bottom, SpaceProps, left } from 'styled-system'
 export const CarouselWrapper = styled.div`
   position: relative;
   width: 100%;
-  box-shadow: 21px 20px 35px 0 rgba(76, 89, 1, 0.27);
+  box-shadow: 0 24px 20px -10px rgba(0, 0, 0, 0.12);
   .react-multi-carousel-list {
     display: flex;
     align-items: center;

@@ -4,6 +4,7 @@ import { margin, marginTop, MarginProps } from 'styled-system'
 export const Paragraph = styled.p<MarginProps>`
   ${margin}
   ${marginTop}
+  text-align: justify;
   width: 100%;
   font-size: 1.5rem;
   font-weight: 300;
