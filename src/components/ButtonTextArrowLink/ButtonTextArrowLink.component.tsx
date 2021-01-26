@@ -10,6 +10,8 @@ interface Props {
   mode?: ButtonArrowType
   text: string
   fontSize?: string[]
+  padding?: string[]
+  fontWeight?: string[]
   to: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   linkProps?: GatsbyLinkProps<any>
@@ -24,10 +26,12 @@ const ButtonArrow = ({
   text,
   to,
   fontSize = [''],
+  fontWeight = [''],
+  padding = [''],
   ...linkProps
 }: Props): JSX.Element => (
   <ThemeProvider theme={{ mode } as ButtonArrowTheme}>
-    <CustomLink to={to} {...linkProps}>
+    <CustomLink to={to} padding={padding} fontWeight={fontWeight} {...linkProps}>
       <Flex width="100%" justifyContent="center" flexFlow="row nowrap" alignItems="center">
         <TextWrapper fontSize={fontSize}>{text}</TextWrapper>
         <IconWrapper>

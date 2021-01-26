@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import theme from 'styled-theming'
-import { fontSize, TypographyProps } from 'styled-system'
+import { fontSize, padding, fontWeight, TypographyProps } from 'styled-system'
 import { Link } from 'gatsby'
 import { ButtonArrowType } from './ButtonTextArrowLink.constants'
 import { Border, Color, Transition, Shadow } from '~/styles/constants'
@@ -30,10 +30,12 @@ const SecondaryArrowButtonStyle = css`
   }
 `
 
-export const CustomLink = styled(Link)`
+export const CustomLink = styled(Link)<TypographyProps>`
   position: relative;
   padding: 18px 30px;
   font-weight: 500;
+  ${padding};
+  ${fontWeight};
   display: inline-block;
   transition: all ${themeTransition(Transition.BUTTON)};
   z-index: 1;

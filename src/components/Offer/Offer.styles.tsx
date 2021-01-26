@@ -13,6 +13,7 @@ import {
   justifyContent,
   DisplayProps
 } from 'styled-system'
+import { Breakpoint, getBreakpointMediaQuery } from '~/styles/media'
 
 export const ButtonWrapper = styled.div`
   transition: all ${themeTransition(Transition.BUTTON)};
@@ -44,8 +45,15 @@ const titleCss = css`
 `
 
 export const TitleMobile = styled(Link)<DisplayProps>`
+  width: 100%;
   ${titleCss};
   ${display};
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  span {
+    flex: 1;
+  }
 `
 
 export const Title = styled.div<DisplayProps>`
@@ -68,10 +76,11 @@ export const SubOffer = styled.li`
 `
 
 export const SubOfferLink = styled(Link)`
+  max-width: 300px;
   position: relative;
   padding-left: 12px;
   font-size: 1.4rem;
-  text-align: center;
+  text-align: left;
   font-weight: 300;
   font-stretch: normal;
   font-style: normal;
@@ -79,17 +88,47 @@ export const SubOfferLink = styled(Link)`
   letter-spacing: 0.4px;
   color: ${themeColor(Color.PRIMARY)};
   transition: all ${themeTransition(Transition.BUTTON)};
-  &::before {
-    top: -2px;
-    position: relative;
-    content: '';
-    display: inline-block;
-    margin-right: 8px;
-    width: 5px;
-    height: 5px;
-    background-color: ${themeColor(Color.SECONDARY)};
+  span {
+    &::before {
+      top: -2px;
+      position: relative;
+      content: '';
+      display: inline-block;
+      margin-right: 8px;
+      width: 5px;
+      height: 5px;
+      background-color: ${themeColor(Color.SECONDARY)};
+    }
   }
   &:hover {
     font-weight: bold;
+  }
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const IconWrapper = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  .icon .path {
+    fill: ${themeColor(Color.SECONDARY)};
+  }
+`
+
+export const IconWrapperSubOffer = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  .icon .path {
+    fill: ${themeColor(Color.SECONDARY)};
+  }
+
+  @media ${getBreakpointMediaQuery(Breakpoint.DESKTOP)} {
+    display: none;
   }
 `
