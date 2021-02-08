@@ -110,6 +110,14 @@ export const CarouselWrapper = styled.div`
       overflow: visible !important;
     }
   }
+
+  @media (min-width: 768px) {
+    .react-multi-carousel-dot-list {
+      left: auto;
+      right: 25%;
+      transform: translateX(50%);
+    }
+  }
 `
 
 export const ArrowWrapper = styled.div<SpaceProps>`

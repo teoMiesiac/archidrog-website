@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { DefaultTheme, ThemeProvider } from 'styled-components'
-import { Wrapper, Content, Header } from './ExpansionPanel.styles'
+import { Wrapper, Content, Header, IconWrapper } from './ExpansionPanel.styles'
+import { ArrowDown } from '~/components/Icons/ArrowDown'
 
 interface Props {
   header: string | React.ReactNode
@@ -23,7 +24,12 @@ const ExpansionPanel = ({ active = false, onClick = () => undefined, header, chi
   return (
     <ThemeProvider theme={{ expanded } as ExpansionPanelTheme}>
       <Wrapper onClick={onClick}>
-        <Header onClick={() => setExpanded(!expanded)}>{header}</Header>
+        <Header onClick={() => setExpanded(!expanded)}>
+          <span>{header}</span>
+          <IconWrapper>
+            <ArrowDown />
+          </IconWrapper>
+        </Header>
         <Content>{children}</Content>
       </Wrapper>
     </ThemeProvider>
