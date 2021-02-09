@@ -1,13 +1,13 @@
 /* eslint-disable react/jsx-key */
 import React, { useMemo } from 'react'
-import { ReferenceTableData } from '~/models/Reference'
 import { useTable, useExpanded } from 'react-table'
 import { Wrapper } from './ReferenceTable.styles'
 import { ArrowDown } from '~/components/Icons/ArrowDown'
 import { ArrowRight } from '~/components/Icons/ArrowRight'
-import { ExpanderWrapper, Table, TR, TH, THead, TD, Text, Bold, ButtonWrapper } from './ReferenceTable.styles'
+import { ExpanderWrapper, Table, TR, TH, THead, TD, Text, Bold, ButtonWrapper, DIV } from './ReferenceTable.styles'
 import { ButtonDownload, ButtonDownloadType } from '~/components/ButtonDownload'
 import { ButtonPreview, ButtonPreviewType } from '~/components/ButtonPreview'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 interface Props {
   data: Reference
@@ -75,33 +75,36 @@ const TableComponent = ({ columns: userColumns, data }) => {
           </TR>
         ))}
       </THead>
-      <tbody {...getTableBodyProps()}>
+      <TransitionGroup component="tbody" className="todo-list" {...getTableBodyProps()}>
         {rows.map((row, i) => {
+          console.log(row.id, i)
           prepareRow(row)
           return (
-            <React.Fragment {...row.getRowProps()}>
-              <TR {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return (
-                    <TD {...cell.getCellProps()}>
-                      {cell.column.id === 'expander'
-                        ? cell.render('Cell')
-                        : RenderCell({ headerId: cell.column.id, value: cell.value })}
-                    </TD>
-                  )
-                })}
-              </TR>
-            </React.Fragment>
+            <CSSTransition key={row.id} timeout={500} classNames="fade">
+              <React.Fragment {...row.getRowProps()}>
+                <TR {...row.getRowProps()}>
+                  {row.cells.map(cell => {
+                    return (
+                      <TD {...cell.getCellProps()}>
+                        <DIV className="animate">
+                          {cell.column.id === 'expander'
+                            ? cell.render('Cell')
+                            : RenderCell({ headerId: cell.column.id, value: cell.value })}
+                        </DIV>
+                      </TD>
+                    )
+                  })}
+                </TR>
+              </React.Fragment>
+            </CSSTransition>
           )
         })}
-      </tbody>
+      </TransitionGroup>
     </Table>
   )
 }
 
 const ReferenceTable = ({ data }: Props): JSX.Element => {
-  console.log(data)
-
   const columns = useMemo(
     () => [
       {
