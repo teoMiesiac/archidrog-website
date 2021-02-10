@@ -17,7 +17,7 @@ const ContactForm = (): JSX.Element => (
     >
       <SectionTitle>Formularz kontaktowy</SectionTitle>
       <Flex flexDirection={['row']} justifyContent="flex-start">
-        <Box width={['100%', '100%', '50%']}>
+        <Box width="100%" maxWidth="568px">
           <Form />
         </Box>
       </Flex>

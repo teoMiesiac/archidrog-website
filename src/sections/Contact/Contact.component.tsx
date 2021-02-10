@@ -18,7 +18,7 @@ const Contact = (): JSX.Element => (
       justifyContent={['', 'space-between']}
     >
       <SectionTitle>O firmie</SectionTitle>
-      <Flex flexDirection={['column', 'column', 'row']}>
+      <Flex flexDirection={['column-reverse', 'column-reverse', 'row']}>
         <Flex
           flexDirection="column"
           padding={['10px', '20px', '30px']}
