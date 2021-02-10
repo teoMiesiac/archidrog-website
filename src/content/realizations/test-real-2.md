@@ -1,6 +1,6 @@
 ---
 type: realization
-title: test real 2
+title: Studia wykonalności
 sub-realizations:
   - Budowa trasy średnicowej etap II – od ul. Droga Łąkowa do węzła A-1
     „Grudziądz” – odcinek 3

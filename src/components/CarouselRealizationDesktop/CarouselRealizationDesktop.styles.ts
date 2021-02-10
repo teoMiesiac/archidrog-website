@@ -65,8 +65,8 @@ export const CarouselWrapper = styled.div`
     position: absolute;
     bottom: 0;
     display: flex;
-    left: 0;
-    right: 0;
+    right: calc((100% - 361px) / 2);
+    transform: translate(50%);
     justify-content: center;
     margin: auto;
     padding: 0;

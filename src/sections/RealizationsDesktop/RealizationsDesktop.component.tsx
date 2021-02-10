@@ -26,7 +26,7 @@ const RealizationsDesktop = ({ realizations }: Props): JSX.Element => {
           // @ts-ignore
           document.fonts.ready.then(function() {
             /* eslint-enable */
-            setListWidth(currentContainer.scrollWidth + 150)
+            setListWidth(currentContainer.scrollWidth + 160)
           })
         } catch (err) {
           console.log(err.message)

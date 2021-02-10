@@ -36,7 +36,7 @@ const WelcomeSection = (): JSX.Element => (
           ekonomicznym oraz środowiskowym i społecznym.
         </Box>
         <Box padding={['20px 0', '26px 0 0 0']} width="100%">
-          <ButtonTextArrowLink to="/" text="SPRAWDŹ WIĘCEJ" mode={ButtonArrowType.SECONDARY} />
+          <ButtonTextArrowLink to="/" text="SPRAWDŹ WIĘCEJ" mode={ButtonArrowType.SECONDARY} fontSize={['1.6rem']} />
         </Box>
       </Flex>
       <Box width={['100%', '50%']}>

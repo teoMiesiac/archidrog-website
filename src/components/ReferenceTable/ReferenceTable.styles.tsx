@@ -21,6 +21,41 @@ export const Table = styled.table`
   @media ${getBreakpointMediaQuery(Breakpoint.TABLET)} {
     font-size: 1.4rem;
   }
+
+  /* fade animations */
+  .fade-enter .animate {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    max-height: 0;
+  }
+
+  .fade-enter-active .animate {
+    margin-top: 9px;
+    margin-bottom: 9px;
+    max-height: 50px;
+    // transition: max-height 500ms linear;
+    transition: max-height 500ms cubic-bezier(0.4, 0, 0.2, 1), margin-top 500ms linear, margin-bottom 500ms linear;
+  }
+  .fade-exit .animate {
+    margin-top: 9px;
+    margin-bottom: 9px;
+    max-height: 50px;
+  }
+  .fade-exit-active .animate {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: max-height 500ms cubic-bezier(0.4, 0, 0.2, 1), margin-top 500ms cubic-bezier(0.4, 0, 0.2, 1),
+      margin-bottom 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    //transition: max-height 500ms linear;
+  }
+`
+
+export const DIV = styled.div`
+  padding: 0 5px;
+  margin-top: 9px;
+  margin-bottom: 9px;
 `
 
 export const THead = styled.thead`
@@ -32,9 +67,8 @@ export const THead = styled.thead`
   letter-spacing: 1.42px;
 `
 export const TD = styled.td`
-  padding: 9px 5px;
+  // padding: 9px 5px;
   vertical-align: middle;
-  height: 36px;
   &:nth-of-type(4) {
     width: 1%;
   }
@@ -43,12 +77,12 @@ export const TD = styled.td`
   }
 `
 export const TR = styled.tr`
-  height: 24px;
+  //height: 24px;
   border-bottom: 1px solid ${themeColor(Color.GREY_400)};
   transition: all ${themeTransition(Transition.BUTTON)};
 
   &:hover {
-    ${themeShadow(Shadow.OFFER)};
+    //${themeShadow(Shadow.OFFER)};
   }
 `
 

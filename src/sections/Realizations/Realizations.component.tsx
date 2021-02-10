@@ -49,7 +49,7 @@ const Realizations = (): JSX.Element => {
       <Flex
         flexDirection={['column']}
         flexWrap="nowrap"
-        px={[0, 30]}
+        px={[15, 30]}
         py={[20, 30, 50]}
         maxWidth={1480}
         width="100%"

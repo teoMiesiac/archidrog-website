@@ -43,3 +43,16 @@ export const Wrapper = styled.aside`
     }
   }
 `
+
+export const Backdrop = styled.div`
+  position: fixed;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.4;
+  &.active {
+    width: 100%;
+  }
+`

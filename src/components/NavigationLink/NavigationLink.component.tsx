@@ -15,7 +15,7 @@ interface Props {
 const NavigationLink = ({ mode = NavigationLinkType.PRIMARY, to, name, ...linkProps }: Props): JSX.Element => (
   <ThemeProvider theme={{ mode }}>
     <Wrapper>
-      <StyledLink to={to} {...linkProps}>
+      <StyledLink to={to} {...linkProps} activeClassName="active">
         {name}
       </StyledLink>
     </Wrapper>
