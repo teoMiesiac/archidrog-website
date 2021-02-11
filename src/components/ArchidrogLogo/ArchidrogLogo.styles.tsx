@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { Breakpoint, getBreakpointMediaQuery } from '~/styles/media'
 
 interface ImageProps {
@@ -9,9 +10,7 @@ interface ImageProps {
   wDesktopFull?: number
 }
 
-export const ImageWrapper = styled.div``
-
-export const Image = styled.img<ImageProps>`
+export const ImageWrapper = styled.div<ImageProps>`
   height: auto;
   width: ${props => props.wMobile}px;
   @media ${getBreakpointMediaQuery(Breakpoint.TABLET)} {
