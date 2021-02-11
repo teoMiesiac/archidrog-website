@@ -3,7 +3,9 @@ import { Flex } from 'reflexbox/styled-components'
 import { Breakpoint, media } from '~/styles/media'
 import BackgroundImage from 'gatsby-background-image'
 
-export const HeaderWrapper = styled(BackgroundImage)`
+export const HeaderWrapper = styled.header``
+
+export const HeaderBackgroundImage = styled(BackgroundImage)`
   width: 100%;
   display: flex;
   flex-direction: column;
