@@ -24,10 +24,14 @@ const slideOut = keyframes`
   }
 `
 
-export const Wrapper = styled.aside`
+interface WrapperProps {
+  headerHeight: number
+}
+
+export const Wrapper = styled.aside<WrapperProps>`
   position: fixed;
   bottom: 0;
-  top: 0;
+  top: ${props => props.headerHeight}px;
   z-index: ${themeZIndex(ZIndex.OVERLAY)};
   left: 0;
   width: 100%;

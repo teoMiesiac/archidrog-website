@@ -4,9 +4,10 @@ import { Wrapper, Backdrop } from './Drawer.styles'
 interface Props {
   isOpen: boolean
   children: React.ReactNode
+  headerHeight: number
 }
 
-function Drawer({ children, isOpen }: Props): JSX.Element {
+function Drawer({ children, isOpen, headerHeight }: Props): JSX.Element {
   const [animate, setAnimate] = React.useState(false)
 
   React.useEffect(() => {
@@ -15,11 +16,14 @@ function Drawer({ children, isOpen }: Props): JSX.Element {
     }
   }, [animate, isOpen])
 
+  console.log(headerHeight)
+
   return (
     <>
       <Backdrop className={`${isOpen ? 'active' : ''}`} />
-
-      <Wrapper className={`${isOpen ? 'active' : ''} ${animate ? 'animate' : ''}`}>{children}</Wrapper>
+      <Wrapper headerHeight={headerHeight} className={`${isOpen ? 'active' : ''} ${animate ? 'animate' : ''}`}>
+        {children}
+      </Wrapper>
     </>
   )
 }

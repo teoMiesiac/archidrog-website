@@ -37,8 +37,30 @@ export interface HeaderThemeProps {
 const Header = (): JSX.Element => {
   const [drawerActive, setDrawerActive] = useState(false)
   const [isSticky, setIsSticky] = useState(false)
+  const [headerHeight, setHeaderHeight] = useState(0)
   const ref = React.createRef<HTMLElement>()
   const data = useStaticQuery(query)
+
+  useEffect(() => {
+    const calculateWidth = async () => {
+      const currentContainer = ref.current
+      if (currentContainer instanceof HTMLElement) {
+        try {
+          /* eslint-disable */
+          // @ts-ignore
+          document.fonts.ready.then(function() {
+            /* eslint-enable */
+            setHeaderHeight(currentContainer.scrollHeight)
+          })
+        } catch (err) {
+          console.log(err.message)
+          // set default value for browsers that do not support the listener
+          setHeaderHeight(100)
+        }
+      }
+    }
+    calculateWidth()
+  }, [ref])
 
   useEffect(() => {
     const cachedRef = ref.current as Element,
@@ -67,7 +89,7 @@ const Header = (): JSX.Element => {
                 flexDirection={['row']}
                 justifyContent="space-between"
                 alignItems="center"
-                py={[8, 21]}
+                py={[8, 8]}
                 px={[15, 30]}
                 width={['100%']}
               >
@@ -109,7 +131,7 @@ const Header = (): JSX.Element => {
           </HeaderBackgroundImage>
         </HeaderWrapper>
       </ThemeProvider>
-      <MobileMenu active={drawerActive} onClose={onHamburgerClick} items={NavigationList} />
+      <MobileMenu active={drawerActive} onClose={onHamburgerClick} items={NavigationList} headerHeight={headerHeight} />
     </>
   )
 }

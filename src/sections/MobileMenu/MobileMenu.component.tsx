@@ -12,18 +12,15 @@ interface Props {
   active: boolean
   onClose: () => void
   items: NavigationLinkHeader[]
+  headerHeight: number
 }
 
-const MobileMenu = ({ mode = MobileMenuType.PRIMARY, active, onClose, items }: Props): JSX.Element => {
+const MobileMenu = ({ mode = MobileMenuType.PRIMARY, active, onClose, items, headerHeight }: Props): JSX.Element => {
   return (
     <ThemeProvider theme={{ mode }}>
       <Container>
-        <Drawer isOpen={active}>
+        <Drawer isOpen={active} headerHeight={headerHeight}>
           <DrawerInnerWrapper>
-            <DrawerHeader>
-              {/*<ArchidrogLogo wMobile={110} mode={ArchidrogLogoType.SECONDARY} /> */}
-              <Hamburger onClick={onClose} active={active} />
-            </DrawerHeader>
             {items.map(item => (
               <LinkMobile key={item.name} to={item.to}>
                 {item.name}
