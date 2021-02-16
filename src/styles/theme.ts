@@ -71,7 +71,8 @@ export const zIndexes = {
 export const transitions: ThemeMapDef<Transition, string> = {
   [Transition.DEFAULT]: `0.3s ease-in`,
   [Transition.LINK]: `0.3s ease-in`,
-  [Transition.BUTTON]: `0.3s ease-in-out`
+  [Transition.BUTTON]: `0.3s ease-in-out`,
+  [Transition.SHADOW]: ` 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);`
 }
 
 const gridBreakpoints = [breakpoints.tablet, breakpoints.desktop, breakpoints.desktopFull].map(
