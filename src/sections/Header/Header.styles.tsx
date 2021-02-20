@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import BackgroundImage from 'gatsby-background-image'
 import { Flex } from 'reflexbox/styled-components'
 import { Breakpoint, media } from '~/styles/media'
 import { ZIndex, Transition } from '~/styles/constants'
@@ -7,8 +6,9 @@ import { styleWhenTrue, themeZIndex, themeTransition } from '~/styles/getters'
 import { HeaderThemeProps } from './Header.component'
 
 const stickyHeader = css`
-  transition: box-shadow ${themeTransition(Transition.SHADOW)};
+  transition: box-shadow ${themeTransition(Transition.SHADOW)}, background-color ${themeTransition(Transition.SHADOW)};
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: rgba(255, 255, 255, 1);
 `
 
 export const HeaderWrapper = styled.header`
@@ -16,27 +16,12 @@ export const HeaderWrapper = styled.header`
   // -1 to make "isSticky" hook work
   top: -1px;
   z-index: ${themeZIndex(ZIndex.HEADER)};
-  transition: box-shadow ${themeTransition(Transition.SHADOW)};
-  ${styleWhenTrue<HeaderThemeProps>(({ isSticky }) => isSticky, stickyHeader)};
-`
-
-export const HeaderBackgroundImage = styled(BackgroundImage)`
-  width: 100%;
+  transition: box-shadow ${themeTransition(Transition.SHADOW)}, background-color ${themeTransition(Transition.SHADOW)};
+  background-color: rgba(255, 255, 255, 0);
   display: flex;
-  flex-direction: column;
+  flex-flow: row nowrap;
   justify-content: center;
-  align-items: center;
-`
-export const BackgroundMask = styled.div`
-  width: 100%;
-  object-fit: contain;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), #ffffff 85%);
-  background-position: 0 0;
-  background-repeat: repeat-y;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  ${styleWhenTrue<HeaderThemeProps>(({ isSticky }) => isSticky, stickyHeader)};
 `
 
 export const BurgerWrapper = styled.div`
