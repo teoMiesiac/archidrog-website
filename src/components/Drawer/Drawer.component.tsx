@@ -24,7 +24,7 @@ const Drawer = observer(
     return (
       <>
         <Backdrop className={`${isOpen ? 'active' : ''}`} />
-        <Wrapper headerHeight={headerHeight} className={`${isOpen ? 'active' : ''} ${animate ? 'animate' : ''}`}>
+        <Wrapper headerHeight={headerHeight - 1} className={`${isOpen ? 'active' : ''} ${animate ? 'animate' : ''}`}>
           {children}
         </Wrapper>
       </>

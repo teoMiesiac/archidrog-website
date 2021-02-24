@@ -19,6 +19,7 @@ import { useDataStore } from '~/store/hooks'
 
 export interface HeaderThemeProps {
   isSticky: boolean
+  drawerActive: boolean
 }
 
 const Header = observer(
@@ -93,7 +94,7 @@ const Header = observer(
 
     return (
       <>
-        <ThemeProvider theme={{ isSticky } as HeaderThemeProps}>
+        <ThemeProvider theme={{ isSticky, drawerActive } as HeaderThemeProps}>
           <HeaderWrapper ref={ref}>
             <MobileContentWrapper
               flexWrap="no-wrap"

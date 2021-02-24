@@ -7,7 +7,13 @@ import { HeaderThemeProps } from './Header.component'
 
 const stickyHeader = css`
   transition: box-shadow ${themeTransition(Transition.SHADOW)}, background-color ${themeTransition(Transition.SHADOW)};
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
+  background-color: rgba(255, 255, 255, 1);
+`
+
+const drawerActive = css`
+  transition: box-shadow ${themeTransition(Transition.SHADOW)}, background-color ${themeTransition(Transition.SHADOW)};
+  box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
   background-color: rgba(255, 255, 255, 1);
 `
 
@@ -22,6 +28,7 @@ export const HeaderWrapper = styled.header`
   flex-flow: row nowrap;
   justify-content: center;
   ${styleWhenTrue<HeaderThemeProps>(({ isSticky }) => isSticky, stickyHeader)};
+  ${styleWhenTrue<HeaderThemeProps>(({ drawerActive }) => drawerActive, drawerActive)};
 `
 
 export const BurgerWrapper = styled.div`
