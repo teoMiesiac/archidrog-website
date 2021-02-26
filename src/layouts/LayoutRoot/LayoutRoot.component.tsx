@@ -9,9 +9,7 @@ const GlobalLayout = ({ children }): JSX.Element => (
   <>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <DataStoreProvider>
-        <BodyWrapper>{children}</BodyWrapper>
-      </DataStoreProvider>
+      <DataStoreProvider>{children}</DataStoreProvider>
     </ThemeProvider>
   </>
 )
