@@ -20,7 +20,7 @@ const MobileMenu = ({ mode = MobileMenuType.PRIMARY, active, onClose, items }: P
         <Drawer isOpen={active}>
           <DrawerInnerWrapper>
             {items.map(item => (
-              <LinkMobile key={item.name} to={item.to}>
+              <LinkMobile key={item.name} to={item.to} onClick={onClose}>
                 {item.name}
               </LinkMobile>
             ))}

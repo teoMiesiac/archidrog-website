@@ -9,13 +9,14 @@ interface Props {
   mode?: LinkMobileType
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   linkProps?: GatsbyLinkProps<any>
+  onClick?: () => void
   to: string
   children: string | React.ReactNode
 }
 
-const LinkMobile = ({ mode, children, to, ...linkProps }: Props): JSX.Element => (
+const LinkMobile = ({ mode, children, to, onClick, ...linkProps }: Props): JSX.Element => (
   <ThemeProvider theme={{ mode }}>
-    <CustomLink to={to} {...linkProps}>
+    <CustomLink to={to} onClick={onClick} {...linkProps}>
       <Content>
         {children}
         <IconWrapper>
