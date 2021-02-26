@@ -37,6 +37,7 @@ export enum Size {
 
 export enum ZIndex {
   CONTENT,
+  NAVIGATION,
   HEADER,
   OVERLAY
 }
@@ -44,5 +45,6 @@ export enum ZIndex {
 export enum Transition {
   DEFAULT,
   LINK,
-  BUTTON
+  BUTTON,
+  SHADOW
 }

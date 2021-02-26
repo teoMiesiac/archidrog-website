@@ -11,13 +11,12 @@ interface ButtonArrowTheme extends DefaultTheme {
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   mode?: ButtonPreviewType
-  href: string
   fontSize?: string[]
 }
 
-const ButtonPreview = ({ mode = ButtonPreviewType.PRIMARY, href, fontSize = [''] }: Props): JSX.Element => (
+const ButtonPreview = ({ mode = ButtonPreviewType.PRIMARY, fontSize = [''], ...rest }: Props): JSX.Element => (
   <ThemeProvider theme={{ mode } as ButtonArrowTheme}>
-    <CustomButton href={href} download>
+    <CustomButton {...rest}>
       <Flex width="100%" justifyContent="center" flexFlow="row nowrap" alignItems="center">
         <IconWrapper>
           <Loupe />

@@ -1,0 +1,30 @@
+.overlay {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.document {
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+.pdf {
+  width: 100%;
+  height: auto;
+}
+
+.pdf canvas {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.spinner {
+  display: block;
+}

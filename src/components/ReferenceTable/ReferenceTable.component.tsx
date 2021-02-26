@@ -11,6 +11,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 interface Props {
   data: Reference
+  onPreview: (value: any) => void
 }
 
 export interface Reference {
@@ -25,7 +26,7 @@ export interface ScopeOfWork {
   }
 }
 
-const RenderCell = ({ headerId, value }): JSX.Element => {
+const RenderCell = ({ headerId, value, onPreview }): JSX.Element => {
   switch (headerId) {
     case 'investor':
       return (
@@ -38,7 +39,13 @@ const RenderCell = ({ headerId, value }): JSX.Element => {
     case 'preview':
       return (
         <ButtonWrapper>
-          <ButtonPreview mode={ButtonPreviewType.SECONDARY} href={value} fontSize={['1.4rem']} />
+          <ButtonPreview
+            onClick={() => {
+              onPreview(value)
+            }}
+            mode={ButtonPreviewType.SECONDARY}
+            fontSize={['1.4rem']}
+          />
         </ButtonWrapper>
       )
     case 'download':
@@ -48,7 +55,7 @@ const RenderCell = ({ headerId, value }): JSX.Element => {
   }
 }
 
-const TableComponent = ({ columns: userColumns, data }) => {
+const TableComponent = ({ columns: userColumns, data, onPreview }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -63,7 +70,6 @@ const TableComponent = ({ columns: userColumns, data }) => {
     },
     useExpanded // Use the useExpanded plugin hook
   )
-  console.log(data)
   return (
     <Table {...getTableProps()}>
       <THead>
@@ -77,25 +83,22 @@ const TableComponent = ({ columns: userColumns, data }) => {
       </THead>
       <TransitionGroup component="tbody" className="todo-list" {...getTableBodyProps()}>
         {rows.map((row, i) => {
-          console.log(row.id, i)
           prepareRow(row)
           return (
             <CSSTransition key={row.id} timeout={500} classNames="fade">
-              <React.Fragment {...row.getRowProps()}>
-                <TR {...row.getRowProps()}>
-                  {row.cells.map(cell => {
-                    return (
-                      <TD {...cell.getCellProps()}>
-                        <DIV className="animate">
-                          {cell.column.id === 'expander'
-                            ? cell.render('Cell')
-                            : RenderCell({ headerId: cell.column.id, value: cell.value })}
-                        </DIV>
-                      </TD>
-                    )
-                  })}
-                </TR>
-              </React.Fragment>
+              <TR {...row.getRowProps()}>
+                {row.cells.map(cell => {
+                  return (
+                    <TD {...cell.getCellProps()}>
+                      <DIV className="animate">
+                        {cell.column.id === 'expander'
+                          ? cell.render('Cell')
+                          : RenderCell({ headerId: cell.column.id, value: cell.value, onPreview })}
+                      </DIV>
+                    </TD>
+                  )
+                })}
+              </TR>
             </CSSTransition>
           )
         })}
@@ -104,7 +107,7 @@ const TableComponent = ({ columns: userColumns, data }) => {
   )
 }
 
-const ReferenceTable = ({ data }: Props): JSX.Element => {
+const ReferenceTable = ({ data, onPreview }: Props): JSX.Element => {
   const columns = useMemo(
     () => [
       {
@@ -160,7 +163,7 @@ const ReferenceTable = ({ data }: Props): JSX.Element => {
 
   return (
     <Wrapper>
-      <TableComponent columns={columns} data={data} />
+      <TableComponent columns={columns} data={data} onPreview={onPreview} />
     </Wrapper>
   )
 }

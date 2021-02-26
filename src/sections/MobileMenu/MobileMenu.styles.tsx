@@ -9,6 +9,8 @@ const HEADER_HEIGHT = '45px'
 const HEADER_PADDING = '0 10px'
 
 export const Container = styled.section`
+  position: relative;
+  top: 100px;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;

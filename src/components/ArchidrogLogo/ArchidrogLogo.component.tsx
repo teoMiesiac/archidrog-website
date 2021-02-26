@@ -9,14 +9,14 @@ export const query = graphql`
   query {
     LogoOnWhite: file(relativePath: { eq: "images/archidrog-logo-color-onwhite.png" }) {
       childImageSharp {
-        fluid(maxWidth: 392, maxHeight: 210) {
+        fluid(maxWidth: 392, maxHeight: 210, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     LogoOnDark: file(relativePath: { eq: "images/archidrog-logo-color-ondark.png" }) {
       childImageSharp {
-        fluid(maxWidth: 392, maxHeight: 210) {
+        fluid(maxWidth: 392, maxHeight: 210, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }

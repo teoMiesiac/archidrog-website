@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Flex } from 'reflexbox/styled-components'
 import { Section } from '~/components/Section'
 import { SectionTitle } from '~/components/SectionTitle'
 import { ReferenceTable } from '~/components/ReferenceTable'
+import { ModalPDF } from '~/components/ModalPDF'
 import { parseReferenceData } from '~/utils'
 
 const query = graphql`
@@ -30,7 +31,28 @@ const query = graphql`
   }
 `
 
+const initialState = {
+  isModalOpen: false,
+  srcPDF: ''
+}
+
+const SET_SRC_PDF = 'set_src_pdf'
+const CLOSE_MODAL = 'close_modal'
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case SET_SRC_PDF:
+      return { isModalOpen: true, srcPDF: action.payload }
+    case CLOSE_MODAL:
+      return { isModalOpen: false, srcPDF: '' }
+    default:
+      throw new Error()
+  }
+}
+
 const References = (): JSX.Element => {
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const { isModalOpen, srcPDF } = state
   const data = useStaticQuery(query)
   const reference = parseReferenceData(data)
 
@@ -46,8 +68,9 @@ const References = (): JSX.Element => {
         justifyContent={['', 'space-between']}
       >
         <SectionTitle>Referencje</SectionTitle>
-        <ReferenceTable data={reference} />
+        <ReferenceTable data={reference} onPreview={value => dispatch({ type: SET_SRC_PDF, payload: value })} />
       </Flex>
+      <ModalPDF isOpen={isModalOpen} src={srcPDF} onClose={() => dispatch({ type: CLOSE_MODAL })} />
     </Section>
   )
 }

@@ -24,11 +24,15 @@ const slideOut = keyframes`
   }
 `
 
-export const Wrapper = styled.aside`
+interface WrapperProps {
+  headerHeight: number
+}
+
+export const Wrapper = styled.aside<WrapperProps>`
   position: fixed;
   bottom: 0;
-  top: 0;
-  z-index: ${themeZIndex(ZIndex.OVERLAY)};
+  top: ${props => props.headerHeight}px;
+  z-index: ${themeZIndex(ZIndex.NAVIGATION)};
   left: 0;
   width: 100%;
   height: 100%;
@@ -52,6 +56,8 @@ export const Backdrop = styled.div`
   left: 0;
   background-color: black;
   opacity: 0.4;
+  z-index: ${themeZIndex(ZIndex.NAVIGATION)};
+
   &.active {
     width: 100%;
   }

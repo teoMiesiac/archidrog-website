@@ -49,7 +49,7 @@ const SecondaryButtonTRHoverStyle = css`
   }
 `
 
-export const CustomButton = styled.a`
+export const CustomButton = styled.button`
   position: relative;
   padding: 9px 20px;
   font-weight: bold;
