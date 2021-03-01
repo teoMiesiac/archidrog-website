@@ -13,7 +13,7 @@ export const FontCss = css`
     src: url(${RobotoThin}) format('truetype');
     font-weight: 100;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 
   @font-face {
@@ -21,7 +21,7 @@ export const FontCss = css`
     src: url(${RobotoLight}) format('truetype');
     font-weight: 300;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 
   @font-face {
@@ -29,7 +29,7 @@ export const FontCss = css`
     src: url(${RobotoRegular}) format('truetype');
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 
   @font-face {
@@ -37,7 +37,7 @@ export const FontCss = css`
     src: url(${RobotoMedium}) format('truetype');
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 
   @font-face {
@@ -45,7 +45,7 @@ export const FontCss = css`
     src: url(${RobotoBold}) format('truetype');
     font-weight: 600;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 
   @font-face {
@@ -53,6 +53,6 @@ export const FontCss = css`
     src: url(${RobotoBlack}) format('truetype');
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 `

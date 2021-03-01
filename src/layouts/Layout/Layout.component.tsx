@@ -1,6 +1,7 @@
 import React from 'react'
 import { LayoutRoot } from '~/layouts/LayoutRoot'
 import { LayoutMain } from '~/layouts/LayoutMain'
+import '~/styles/global.css'
 
 const Layout = ({ children }): JSX.Element => (
   <LayoutRoot>

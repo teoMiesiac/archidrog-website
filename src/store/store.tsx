@@ -12,5 +12,5 @@ export const StoreContext = createContext(store)
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const DataStoreProvider = ({ children }: any) => {
-  return <StoreContext.Provider value={store}>{children}. </StoreContext.Provider>
+  return <StoreContext.Provider value={store}>{children}</StoreContext.Provider>
 }
