@@ -5,7 +5,6 @@ import { ResetCss } from './reset'
 import { FontCss } from './fonts'
 
 export const GlobalStyle = createGlobalStyle`
-  ${FontCss}
   ${ResetCss}
 
   html, body {
