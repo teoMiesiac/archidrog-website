@@ -72,7 +72,7 @@ export const BulletPointText = styled.p`
   line-height: 1.57;
   letter-spacing: 0.4px;
   color: ${themeColor(Color.PRIMARY)};
-  transition: all ${themeTransition(Transition.BUTTON)};
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   &::before {
     top: -2px;
     position: relative;
