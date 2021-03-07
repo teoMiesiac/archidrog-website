@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import theme from 'styled-theming'
-import { Link } from 'gatsby'
+import { Link } from 'react-scroll'
 import { LinkMobileType } from './LinkMobile.constants'
 import { Border, Color } from '~/styles/constants'
 import { themeBorder, themeColor } from '~/styles/getters'

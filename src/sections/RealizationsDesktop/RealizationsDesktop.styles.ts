@@ -1,11 +1,12 @@
 import styled, { css } from 'styled-components'
 import { Flex } from 'reflexbox/styled-components'
-
+import { space, SpaceProps } from 'styled-system'
 import { Color, Transition, Shadow } from '~/styles/constants'
 import { themeColor, themeTransition, themeShadow } from '~/styles/getters'
 import { Breakpoint, getBreakpointMediaQuery } from '~/styles/media'
 
-export const Wrapper = styled(Flex)`
+export const Wrapper = styled(Flex)<SpaceProps>`
+  ${space}
   display: none;
   @media ${getBreakpointMediaQuery(Breakpoint.DESKTOP)} {
     display: flex;

@@ -6,12 +6,13 @@ import { CarouselAbout } from '~/components/CarouselAbout'
 import { Paragraph, Bold } from './AboutCompany.styles'
 
 const AboutCompany = (): JSX.Element => (
-  <Section>
+  <Section id="o-firmie">
     <Flex
       flexDirection={['column', 'column']}
       flexWrap="nowrap"
       px={[15, 30]}
       py={[20, 30, 50]}
+      my={[20, 50, 100]}
       maxWidth={1480}
       width="100%"
       justifyContent={['', 'space-between']}

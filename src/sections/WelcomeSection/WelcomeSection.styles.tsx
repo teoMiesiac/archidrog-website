@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import BackgroundImg from 'gatsby-background-image'
 import { Flex } from 'reflexbox/styled-components'
 import { fontSize, FontSizeProps } from 'styled-system'
 import { Color, ZIndex } from '~/styles/constants'
@@ -29,5 +28,5 @@ export const BackgroundMask = styled.div`
 `
 
 export const Content = styled(Flex)`
-  z-index: ${themeZIndex(ZIndex.WELCOME)};
+  z-index: ${themeZIndex(ZIndex.CONTENT_PARALLAX)};
 `

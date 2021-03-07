@@ -27,7 +27,7 @@ const Header = observer(
     const [drawerActive, setDrawerActive] = useState(false)
     const [isSticky, setIsSticky] = useState(false)
     const {
-      UIStore: { setHeaderHeight }
+      UIStore: { setHeaderHeight, headerHeight }
     } = useDataStore()
     const ref = React.createRef<HTMLElement>()
 
@@ -95,7 +95,7 @@ const Header = observer(
     return (
       <>
         <ThemeProvider theme={{ isSticky, drawerActive } as HeaderThemeProps}>
-          <HeaderWrapper ref={ref}>
+          <HeaderWrapper ref={ref} data-scroll-header>
             <MobileContentWrapper
               flexWrap="no-wrap"
               flexDirection={['row']}
@@ -135,7 +135,7 @@ const Header = observer(
               <ArchidrogLogo mode={ArchidrogLogoType.SECONDARY} wMobile={131} wDesktop={131} />
               <Flex flexWrap="no-wrap" flexDirection={['row']}>
                 {NavigationList.map(item => (
-                  <NavigationLink key={item.name} {...item} />
+                  <NavigationLink key={item.name} {...item} offset={-headerHeight} />
                 ))}
               </Flex>
             </DesktopContentWrapper>

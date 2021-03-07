@@ -7,7 +7,7 @@ import { Contact as ContactInformations } from '~/components/Contact'
 import { Subtitle } from './Contact.styles'
 
 const Contact = (): JSX.Element => (
-  <Section>
+  <Section id="kontakt">
     <Flex
       flexDirection={['column', 'column']}
       flexWrap="nowrap"
@@ -17,8 +17,8 @@ const Contact = (): JSX.Element => (
       width="100%"
       justifyContent={['', 'space-between']}
     >
-      <SectionTitle>O firmie</SectionTitle>
-      <Flex flexDirection={['column-reverse', 'column-reverse', 'row']}>
+      <SectionTitle>Kontakt</SectionTitle>
+      <Flex flexDirection={['column-reverse', 'column-reverse', 'row']} marginTop={['15px', '15px', '30px']}>
         <Flex
           flexDirection="column"
           padding={['10px', '20px', '30px']}

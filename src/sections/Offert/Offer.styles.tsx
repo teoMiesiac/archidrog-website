@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import { margin, MarginProp } from 'styled-system'
+import { Flex } from 'reflexbox/styled-components'
+import { ZIndex } from '~/styles/constants'
+import { themeZIndex } from '~/styles/getters'
 
 export const SubTitle = styled.p<MarginProp>`
   width: 100%;
@@ -27,4 +30,8 @@ export const BackgroundMask = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`
+
+export const Content = styled(Flex)`
+  z-index: ${themeZIndex(ZIndex.CONTENT_PARALLAX)};
 `

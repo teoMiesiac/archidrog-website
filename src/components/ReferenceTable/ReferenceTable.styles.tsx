@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { space, SpaceProps } from 'styled-system'
 import { Color, Transition, Shadow } from '~/styles/constants'
 import { themeColor, themeTransition, themeShadow } from '~/styles/getters'
 import { getBreakpointMediaQuery, Breakpoint } from '~/styles/media'
@@ -12,7 +13,8 @@ export const ExpanderWrapper = styled.div`
   height: 24px;
 `
 
-export const Table = styled.table`
+export const Table = styled.table<SpaceProps>`
+  ${space};
   width: 100%;
   font-size: 1.2rem;
   font-weight: 300;

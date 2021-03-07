@@ -57,12 +57,13 @@ const References = (): JSX.Element => {
   const reference = parseReferenceData(data)
 
   return (
-    <Section>
+    <Section id="referencje">
       <Flex
         flexDirection={['column', 'column']}
         flexWrap="nowrap"
         px={[15, 30]}
         py={[20, 30, 50]}
+        my={[20, 50, 100]}
         maxWidth={1480}
         width="100%"
         justifyContent={['', 'space-between']}

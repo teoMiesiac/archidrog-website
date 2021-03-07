@@ -37,7 +37,7 @@ export enum Size {
 
 export enum ZIndex {
   CONTENT,
-  WELCOME,
+  CONTENT_PARALLAX,
   NAVIGATION,
   HEADER,
   OVERLAY

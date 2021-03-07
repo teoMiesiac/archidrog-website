@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import theme from 'styled-theming'
-import { Link } from 'gatsby'
+import { Link } from 'react-scroll'
 import { Color, Transition } from '~/styles/constants'
 import { themeColor, themeTransition } from '~/styles/getters'
 import { NavigationLinkType } from './NavigationLink.constants'

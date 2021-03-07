@@ -12,11 +12,20 @@ interface Props {
   onClick?: () => void
   to: string
   children: string | React.ReactNode
+  offset?: number
 }
 
-const LinkMobile = ({ mode, children, to, onClick, ...linkProps }: Props): JSX.Element => (
+const LinkMobile = ({ mode, children, to, onClick, offset }: Props): JSX.Element => (
   <ThemeProvider theme={{ mode }}>
-    <CustomLink to={to} onClick={onClick} {...linkProps}>
+    <CustomLink
+      to={to}
+      spy={true}
+      hashSpy={true}
+      smooth={true}
+      offset={offset}
+      activeClassName="active"
+      onClick={onClick}
+    >
       <Content>
         {children}
         <IconWrapper>

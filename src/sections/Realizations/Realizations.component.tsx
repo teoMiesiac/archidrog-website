@@ -45,12 +45,13 @@ const Realizations = (): JSX.Element => {
   const data = useStaticQuery(query)
   const realizations = mapRealizationAndSubRealizationData(data)
   return (
-    <Section>
+    <Section id="realizacje">
       <Flex
         flexDirection={['column']}
         flexWrap="nowrap"
         px={[15, 30]}
         py={[20, 30, 50]}
+        my={[20, 50, 100]}
         maxWidth={1480}
         width="100%"
         justifyContent={['', 'space-between']}

@@ -71,7 +71,7 @@ const TableComponent = ({ columns: userColumns, data, onPreview }) => {
     useExpanded // Use the useExpanded plugin hook
   )
   return (
-    <Table {...getTableProps()}>
+    <Table {...getTableProps()} marginTop={['15px', '15px', '30px']}>
       <THead>
         {headerGroups.map(headerGroup => (
           <TR {...headerGroup.getHeaderGroupProps()}>
