@@ -6,6 +6,5 @@ sub-realizations:
     „Grudziądz” – odcinek 3
   - Budowa trasy średnicowej etap II – od ul. Droga Łąkowa do węzła A-1
     „Grudziądz” – odcinek 3
-  - Obwodnica m. Grodkowa w ciągu dróg Wojewódzkich nr 401 i 385
   - Połączenie portu lotniczego z portem morskim Gdańsk - trasa Słowackiego
 ---
