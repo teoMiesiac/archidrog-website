@@ -16,7 +16,7 @@ const ContactForm = (): JSX.Element => (
       justifyContent={['', 'space-between']}
     >
       <SectionTitle>Formularz kontaktowy</SectionTitle>
-      <Flex flexDirection={['row']} justifyContent="flex-start">
+      <Flex flexDirection={['row']} justifyContent="flex-start" marginTop={['15px', '15px', '30px']}>
         <Box width="100%" maxWidth="568px">
           <Form />
         </Box>

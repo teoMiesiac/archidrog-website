@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import Fade from 'react-reveal/Slide'
 import { Realization as IRealization } from '~/models'
 import { Wrapper, List, ListItem, Text } from './RealizationsDesktop.styles'
 import { CarouselRealizationDesktop } from '~/components/CarouselRealizationDesktop'
@@ -39,13 +40,15 @@ const RealizationsDesktop = ({ realizations }: Props): JSX.Element => {
   }, [])
 
   return (
-    <Wrapper flexDirection="row" marginTop="50px">
+    <Wrapper flexDirection="row" marginTop={['15px', '15px', '30px']}>
       <List ref={container} width={listWidth}>
-        {realizations.map(realization => (
-          <ListItem key={realization.title} onClick={() => setSelectedRealization(realization)}>
-            <Text active={realization.title === selectedRealization.title}>{realization.title}</Text>
-          </ListItem>
-        ))}
+        <Fade left duration={1500}>
+          {realizations.map(realization => (
+            <ListItem key={realization.title} onClick={() => setSelectedRealization(realization)}>
+              <Text active={realization.title === selectedRealization.title}>{realization.title}</Text>
+            </ListItem>
+          ))}
+        </Fade>
       </List>
       {selectedRealization.title && (
         <CarouselRealizationDesktop

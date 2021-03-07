@@ -1,21 +1,19 @@
 import React from 'react'
-import { GatsbyLinkProps } from 'gatsby'
 import { ThemeProvider } from 'styled-components'
 import { Wrapper, StyledLink } from './NavigationLink.styles'
 import { NavigationLinkType } from './NavigationLink.constants'
 
 interface Props {
   mode?: NavigationLinkType
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  linkProps?: GatsbyLinkProps<any>
   to: string
   name: string
+  offset?: number
 }
 
-const NavigationLink = ({ mode = NavigationLinkType.PRIMARY, to, name, ...linkProps }: Props): JSX.Element => (
+const NavigationLink = ({ mode = NavigationLinkType.PRIMARY, to, name, offset }: Props): JSX.Element => (
   <ThemeProvider theme={{ mode }}>
     <Wrapper>
-      <StyledLink to={to} {...linkProps} activeClassName="active">
+      <StyledLink to={to} spy={true} hashSpy={true} smooth={true} offset={offset} activeClassName="active">
         {name}
       </StyledLink>
     </Wrapper>

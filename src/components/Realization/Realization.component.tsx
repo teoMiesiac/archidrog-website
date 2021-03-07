@@ -44,11 +44,12 @@ const Realization = ({ images, title, bulletPoints }: Props): JSX.Element => {
       >
         <Title fontSize={['1.6rem', '1.8rem']}>{title}</Title>
         <BulletPointList>
-          {bulletPoints.map(bulletPoint => (
-            <BulletPoint key={bulletPoint}>
-              <BulletPointText>{bulletPoint}</BulletPointText>
-            </BulletPoint>
-          ))}
+          {bulletPoints &&
+            bulletPoints.map(bulletPoint => (
+              <BulletPoint key={bulletPoint}>
+                <BulletPointText>{bulletPoint}</BulletPointText>
+              </BulletPoint>
+            ))}
         </BulletPointList>
       </Content>
     </Flex>

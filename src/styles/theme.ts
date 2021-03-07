@@ -64,6 +64,7 @@ export const activeBreakpoint: (props: { theme: DefaultTheme }) => Breakpoint = 
 
 export const zIndexes = {
   [ZIndex.CONTENT]: 0,
+  [ZIndex.CONTENT_PARALLAX]: 5,
   [ZIndex.NAVIGATION]: 10,
   [ZIndex.HEADER]: 80,
   [ZIndex.OVERLAY]: 100

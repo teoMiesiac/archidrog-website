@@ -23,6 +23,18 @@ const SecondaryArrowButtonStyle = css`
   }
 `
 
+const AnimationFromRightToLeft = css`
+  &::after {
+    left: 0;
+  }
+`
+
+const AnimationFromLeftToRight = css`
+  &::after {
+    right: 0;
+  }
+`
+
 export const Button = styled.button`
   position: relative;
   width: 40px;
@@ -41,11 +53,15 @@ export const Button = styled.button`
     height: 100%;
     content: '';
     position: absolute;
-    left: 0;
     top: 0;
     width: 0;
     z-index: -1;
   }
+
+  ${theme('direction', {
+    [ButtonArrowDirection.RIGHT]: AnimationFromRightToLeft,
+    [ButtonArrowDirection.LEFT]: AnimationFromLeftToRight
+  })}
 `
 
 export const IconRightStyle = css`
